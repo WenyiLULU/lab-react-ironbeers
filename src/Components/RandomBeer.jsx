@@ -1,5 +1,13 @@
+import Header from "./Header";
+
 const RandomBeer = () => {
-    return ( <div>Random beer</div> );
+    return ( 
+        <div>
+            <Header />
+            <div>
+                <h1>Random Beer for Tonight</h1>
+            </div>
+        </div> );
 }
  
 export default RandomBeer;

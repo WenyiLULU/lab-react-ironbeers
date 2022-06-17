@@ -1,6 +1,13 @@
+import Header from "./Header";
+
 const AllBeers = () => {
     return ( 
-        <div>all beers</div>
+        <div>
+            <Header />
+            <div>
+                <h1>Beers Galary</h1>
+            </div>
+        </div>
      );
 }
  
