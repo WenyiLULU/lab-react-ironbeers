@@ -10,14 +10,14 @@ const BeerDetails = () => {
     const [beer, setBeer] = useState({})
     const [fetching, setFetching] = useState(true)
 
-    const getBeer = async () => {
-        const response = await axios.get(`${API_URL}/${beer_id}`)
+    const getBeer = async (id) => {
+        const response = await axios.get(`${API_URL}/${id}`)
         setFetching(false)
         setBeer(response.data)
     }
 
     useEffect(() => {
-        getBeer()
+        getBeer(beer_id)
     }, [beer_id])
 
     return ( 
