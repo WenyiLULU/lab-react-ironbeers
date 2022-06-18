@@ -49,9 +49,9 @@ const NewBeer = () => {
 
     return ( 
         <div>
-            <Header />
+            <Header>New Beer Discovered</Header>
             <div className="App">
-                <h1>New Beer Discovered</h1>
+                
                 <form 
                 style={{margin:"0 auto",display: "flex", flexDirection: "column", justifyContent: "center",width:"60%"}}
                 onSubmit={handleSubmit}
