@@ -50,7 +50,7 @@ const AllBeers = () => {
                 />
             
             {fetching ? 
-            <Loader color="gray" size="xl" />
+            <Loader color="gray" size="xl" style={{margin:"30px auto"}}/>
             :
             <Grid style={{padding: "40px"}}>
                 {beerList.map( (beer) => 

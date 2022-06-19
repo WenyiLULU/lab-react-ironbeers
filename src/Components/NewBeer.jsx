@@ -3,6 +3,7 @@ import Header from "./Header";
 import { API_URL } from "../constants";
 import { useNavigate } from "react-router-dom";
 import axios from "axios";
+import { InputWrapper, Input, Textarea, NumberInput, Button } from '@mantine/core';
 
 
 const NewBeer = () => {
@@ -53,67 +54,114 @@ const NewBeer = () => {
             <div className="App">
                 
                 <form 
-                style={{margin:"0 auto",display: "flex", flexDirection: "column", justifyContent: "center",width:"60%"}}
+                style={{margin:"30px auto",display: "flex", flexDirection: "column", justifyContent: "center",width:"60%"}}
                 onSubmit={handleSubmit}
                 >
-                    <label>Name</label>
-                    <input
-                    type="text"
-                    name="name"
-                    onChange={(e) => setName(e.target.value)}
-                    value={name}
-                    />
-            
-                    <label>Tagline</label>
-                    <input
-                    type="text"
-                    name="tagline"
-                    onChange={(e) => setTagline(e.target.value)}
-                    value={tagline}
-                    />
-
-                    <label>Description</label>
-                    <textarea
-                    type="text"
-                    name="description"
-                    rows="5" cols="33"
-                    onChange={(e) => setDescription(e.target.value)}
-                    value={description}
-                    ></textarea>
+                    <InputWrapper
+                        id="input-demo"
+                        required
+                        label="Name of the beer"
+                        size="md"
+                        >
+                        <Input 
+                        id="input-demo" 
+                        placeholder="Name of the beer" 
+                        radius="lg"
+                        type="text"
+                        name="name"
+                        onChange={(e) => setName(e.target.value)}
+                        value={name}
+                        />
+                    </InputWrapper>
                     
-                    <label>First Brewed</label>
-                    <input
-                    type="text"
-                    name="firstBrewed"
-                    onChange={(e) => setFirstBrewed(e.target.value)}
-                    value={firstBrewed}
-                    />
-                    
-                    <label>Brewers Tips</label>
-                    <input
-                    type="text"
-                    name="brewersTips"
-                    onChange={(e) => setBrewersTips(e.target.value)}
-                    value={brewersTips}
-                    />
+                    <InputWrapper
+                        id="input-demo"
+                        required
+                        label="Tagline"
+                        size="md"
+                        >
+                        <Input 
+                        id="input-demo" 
+                        placeholder="Tagline" 
+                        radius="lg"
+                        type="text"
+                        name="tagline"
+                        onChange={(e) => setTagline(e.target.value)}
+                        value={tagline}
+                        />
+                    </InputWrapper>
 
-                    <label>Attenuation Level</label>
-                    <input
-                    type="number"
-                    name="attenuationLevel"
-                    onChange={(e) => setAttenuationLevel(e.target.value)}
-                    value={attenuationLevel}
+                    <Textarea
+                        placeholder="Description of the beer"
+                        label="Description"
+                        radius="lg"
+                        size="md"
+                        required
+                        onChange={(e) => setDescription(e.target.value)}
+                        value={description}
                     />
-
-                    <label>Contributed By</label>
-                    <input
-                    type="text"
-                    name="contributedBy"
-                    onChange={(e) => setContributedBy(e.target.value)}
-                    value={contributedBy}
-                    />
+                    <InputWrapper
+                        id="input-demo"
+                        label="First Brewed"
+                        size="md"
+                        >
+                        <Input 
+                        id="input-demo" 
+                        placeholder="Date of First Brewed" 
+                        radius="lg"
+                        type="text"
+                        name="firstBrewed"
+                        onChange={(e) => setFirstBrewed(e.target.value)}
+                        value={firstBrewed}
+                        />
+                    </InputWrapper>
+                    <InputWrapper
+                        id="input-demo"
+                        label="Brewers Tips"
+                        size="md"
+                        >
+                        <Input 
+                        id="input-demo" 
+                        placeholder="Brewers Tips" 
+                        radius="lg"
+                        type="text"
+                        name="brewersTips"
+                        onChange={(e) => setBrewersTips(e.target.value)}
+                        value={brewersTips}
+                        />
+                    </InputWrapper>
+                    <InputWrapper
+                        id="input-demo"
+                        label="Attenuation Level"
+                        size="md"
+                        >
+                        <NumberInput 
+                        id="input-demo" 
+                        placeholder= "Attenuation Level"
+                        radius="lg"
+                        type="number"
+                        name="attenuationLevel"
+                        onChange={(value) => setAttenuationLevel(value)}
+                        defaultValue={attenuationLevel}
+                        />
+                    </InputWrapper>
+                    <InputWrapper
+                        id="input-demo"
+                        label="Contributed By"
+                        size="md"
+                        >
+                        <Input 
+                        id="input-demo" 
+                        placeholder="Contributor's name" 
+                        radius="lg"
+                        type="text"
+                        name="contributedBy"
+                        onChange={(e) => setContributedBy(e.target.value)}
+                        value={contributedBy}
+                        />
+                    </InputWrapper>
                     
-                    <button type="submit">Create a New Beer</button>
+                    <Button radius="lg" size="md" uppercase type="submit" style={{margin:"20px 0"}}>Create a New Beer</Button>
                     
                 </form>
             </div>

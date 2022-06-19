@@ -3,6 +3,7 @@ import Header from "./Header";
 import { API_URL } from "../constants";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Loader } from '@mantine/core';
 
 
 const RandomBeer = () => {
@@ -25,7 +26,8 @@ const RandomBeer = () => {
             
             <div>
                 {fetching ?
-                <div> Loading ...</div>
+                <Loader color="gray" size="xl" style={{margin:"30px auto"}}/>
+
                 :
                 <div 
                     style={{

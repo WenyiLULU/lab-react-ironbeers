@@ -3,6 +3,8 @@ import Header from "./Header";
 import { API_URL } from "../constants";
 import { useState, useEffect } from "react";
 import axios from "axios";
+import { Loader } from '@mantine/core';
+
 
 const BeerDetails = () => {
     const {beer_id}= useParams()
@@ -24,7 +26,7 @@ const BeerDetails = () => {
         <div>
             <Header>Beer Ditails</Header>
             {fetching ?
-            <div> Loading ...</div>
+            <Loader color="gray" size="xl" style={{margin:"30px auto"}}/>
             :
             <div 
                 style={{
